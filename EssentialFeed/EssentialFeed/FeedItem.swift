@@ -1,8 +1,8 @@
-//
-//  FeedItem.swift
-//  EssentialFeed
-//
-//  Created by Adam Garrett-Harris on 10/4/22.
-//
-
 import Foundation
+
+struct FeedItem {
+    let id: UUID
+    let description: String?
+    let location: String?
+    let imageURL: URL
+}
