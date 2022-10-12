@@ -194,7 +194,5 @@ private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticS
             
             messages[index].completion(.success(data, response))
         }
-        
-        
     }
 }
