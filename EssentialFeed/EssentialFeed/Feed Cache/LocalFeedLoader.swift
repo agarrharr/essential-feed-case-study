@@ -45,7 +45,7 @@ extension LocalFeedLoader {
     }
 }
     
-extension LocalFeedLoader {
+extension LocalFeedLoader: FeedLoader {
     public func load(completion: @escaping (RetrievalResult) -> Void) {
         store.retrieve { [weak self] result in
             guard let self else { return }
