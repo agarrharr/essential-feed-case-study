@@ -61,7 +61,7 @@ class CodableFeedStore {
 
 final class CodableFeedStoreTests: XCTestCase {
     override func setUp() {
-        super.tearDown()
+        super.setUp()
         
         setupEmptyStoreState()
     }
