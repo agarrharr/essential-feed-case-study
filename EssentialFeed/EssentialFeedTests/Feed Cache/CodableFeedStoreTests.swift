@@ -32,7 +32,7 @@ final class CodableFeedStoreTests: XCTestCase {
         let timestamp = Date()
         
         
-        insert((feed, timestamp), to: sut)
+        insert(feed, timestamp: timestamp, to: sut)
         
         expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
     }
@@ -42,7 +42,7 @@ final class CodableFeedStoreTests: XCTestCase {
         let feed = uniqueImageFeed().local
         let timestamp = Date()
         
-        insert((feed, timestamp), to: sut)
+        insert(feed, timestamp: timestamp, to: sut)
         
         expect(sut, toRetrieveTwice: .found(feed: feed, timestamp: timestamp))
     }
@@ -68,12 +68,12 @@ final class CodableFeedStoreTests: XCTestCase {
     func test_insert_overridesPreviouslyInsertedCacheValues() {
         let sut = makeSUT()
         
-        let firstInsertionError = insert((uniqueImageFeed().local, Date()), to: sut)
+        let firstInsertionError = insert(uniqueImageFeed().local, timestamp: Date(), to: sut)
         XCTAssertNil(firstInsertionError, "Expected to insert cache successfully")
         
         let latestFeed = uniqueImageFeed().local
         let latestTimestamp = Date()
-        let latestInsertionError = insert((latestFeed, latestTimestamp), to: sut)
+        let latestInsertionError = insert(latestFeed, timestamp: latestTimestamp, to: sut)
         
         XCTAssertNil(latestInsertionError, "Expected to override cache successfully")
         expect(sut, toRetrieve: .found(feed: latestFeed, timestamp: latestTimestamp))
@@ -85,7 +85,7 @@ final class CodableFeedStoreTests: XCTestCase {
         let feed = uniqueImageFeed().local
         let timestamp = Date()
         
-        let insertionError = insert((feed, timestamp), to: sut)
+        let insertionError = insert(feed, timestamp: timestamp, to: sut)
         
         XCTAssertNotNil(insertionError, "Expected cache insertion to fail with an error")
     }
@@ -101,7 +101,7 @@ final class CodableFeedStoreTests: XCTestCase {
     
     func test_delete_emptiesPreviouslyInsertedCache() {
         let sut = makeSUT()
-        insert((uniqueImageFeed().local, Date()), to: sut)
+        insert(uniqueImageFeed().local, timestamp: Date(), to: sut)
         
         let deletionError = deleteCache(from: sut)
         
@@ -152,10 +152,10 @@ final class CodableFeedStoreTests: XCTestCase {
     }
     
     @discardableResult
-    private func insert(_ cache: (feed: [LocalFeedImage], timestamp: Date), to sut: FeedStore) -> Error? {
+    private func insert(_ feed: [LocalFeedImage], timestamp: Date, to sut: FeedStore) -> Error? {
         let exp = expectation(description: "Wait for cache retrieval")
         var insertionError: Error?
-        sut.insert(cache.feed, timestamp: cache.timestamp) { receivedInsertionError in
+        sut.insert(feed, timestamp: timestamp) { receivedInsertionError in
             insertionError = receivedInsertionError
             exp.fulfill()
         }
