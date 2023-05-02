@@ -55,7 +55,7 @@ class CacheFeedUseCaseTests: XCTestCase {
             store.completeInsertion(with: insertionError)
         }
     }
-        
+    
     func test_save_succeedsOnSuccessfulCacheInsertion() {
         let (sut, store) = makeSUT()
         
