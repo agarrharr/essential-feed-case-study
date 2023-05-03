@@ -268,27 +268,27 @@
 		99D903AB2A018A5B00D9F034 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				99D903B32A018FDE00D9F034 /* CodableFeedStore */,
-				99D903B42A018FE800D9F034 /* CoreDataFeedStore */,
+				99D903B32A018FDE00D9F034 /* Codable */,
+				99D903B42A018FE800D9F034 /* CoreData */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		99D903B32A018FDE00D9F034 /* CodableFeedStore */ = {
+		99D903B32A018FDE00D9F034 /* Codable */ = {
 			isa = PBXGroup;
 			children = (
 				99921AFC2A00276000096CD0 /* CodableFeedStore.swift */,
 			);
-			path = CodableFeedStore;
+			path = Codable;
 			sourceTree = "<group>";
 		};
-		99D903B42A018FE800D9F034 /* CoreDataFeedStore */ = {
+		99D903B42A018FE800D9F034 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				99D903AE2A018C4A00D9F034 /* CoreDataFeedStore.swift */,
 				99D903B02A018DC600D9F034 /* FeedStore.xcdatamodeld */,
 			);
-			path = CoreDataFeedStore;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		99E7038C29E4E82C006F71C8 /* Helpers */ = {
