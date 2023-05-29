@@ -21,6 +21,7 @@
 		998A4CA9290490BC00E4D08E /* EssentialFeedAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998A4CA8290490BC00E4D08E /* EssentialFeedAPIEndToEndTests.swift */; };
 		998A4CAA290490BC00E4D08E /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994961DF28ECE24900A9B892 /* EssentialFeed.framework */; };
 		998EC0AA2A2530BB0018AF89 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998EC0A22A2530BB0018AF89 /* EssentialFeediOS.framework */; };
+		998EC0B82A2538340018AF89 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998EC0B72A2538340018AF89 /* FeedViewControllerTests.swift */; };
 		99921AFD2A00276000096CD0 /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99921AFC2A00276000096CD0 /* CodableFeedStore.swift */; };
 		99A4969D29E0BCF700C86699 /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4969C29E0BCF700C86699 /* LocalFeedLoader.swift */; };
 		99A4969F29E0BD6300C86699 /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4969E29E0BD6300C86699 /* FeedStore.swift */; };
@@ -101,6 +102,7 @@
 		998EC09C2A252F4B0018AF89 /* EssentialFeedAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeedAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
 		998EC0A22A2530BB0018AF89 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		998EC0A92A2530BB0018AF89 /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		998EC0B72A2538340018AF89 /* FeedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTests.swift; sourceTree = "<group>"; };
 		99921AFC2A00276000096CD0 /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 		99A4969C29E0BCF700C86699 /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
 		99A4969E29E0BD6300C86699 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		998EC0AD2A2530BC0018AF89 /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				998EC0B72A2538340018AF89 /* FeedViewControllerTests.swift */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 					};
 					998EC0A82A2530BB0018AF89 = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 					};
 					99E7F0172A0098B000FB7223 = {
 						CreatedOnToolsVersion = 14.3;
@@ -671,6 +675,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				998EC0B82A2538340018AF89 /* FeedViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,6 +1040,7 @@
 		998EC0B52A2530BC0018AF89 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LTZDRP7TJ2;
@@ -1045,6 +1051,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1053,6 +1060,7 @@
 		998EC0B62A2530BC0018AF89 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LTZDRP7TJ2;
