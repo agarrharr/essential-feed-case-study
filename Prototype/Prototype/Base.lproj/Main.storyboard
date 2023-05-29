@@ -34,7 +34,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BSi-lh-1kf">
-                                            <rect key="frame" x="29" y="17" width="353" height="546"/>
+                                            <rect key="frame" x="20" y="17" width="353" height="546"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="k6H-Mu-Ab4" userLabel="Location Container">
                                                     <rect key="frame" x="0.0" y="0.0" width="79" height="58.333333333333336"/>
@@ -58,9 +58,6 @@
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM2-ve-Ci4">
                                                             <rect key="frame" x="16" y="0.0" width="63" height="36"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="ytr-gZ-Q5g"/>
-                                                            </constraints>
                                                             <string key="text">Location,
 Location</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -101,7 +98,6 @@ Location</string>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="k6H-Mu-Ab4" secondAttribute="trailing" id="VTC-yt-1B2"/>
                                                 <constraint firstItem="929-qu-obr" firstAttribute="width" secondItem="BSi-lh-1kf" secondAttribute="width" id="g8W-uR-H7i"/>
-                                                <constraint firstItem="k6H-Mu-Ab4" firstAttribute="width" secondItem="BSi-lh-1kf" secondAttribute="width" multiplier="0.223796" id="kj7-gA-4P5"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
