@@ -56,6 +56,7 @@
 		99E7F0242A009EF900FB7223 /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD776529FD8CFC00620605 /* FeedCacheTestHelpers.swift */; };
 		99E7F0252A009F0C00FB7223 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CD776729FD8DCE00620605 /* SharedTestHelpers.swift */; };
 		99F6B5D22A50C97000EC30EE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F6B5D12A50C97000EC30EE /* FeedViewController.swift */; };
+		99F6B5D42A536E3D00EC30EE /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F6B5D32A536E3D00EC30EE /* FeedImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 		99E7F01A2A0098B000FB7223 /* EssentialFeedCacheIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedCacheIntegrationTests.swift; sourceTree = "<group>"; };
 		99E7F0222A00990400FB7223 /* EssentialFeedCacheIntegrationTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeedCacheIntegrationTests.xctestplan; sourceTree = "<group>"; };
 		99F6B5D12A50C97000EC30EE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		99F6B5D32A536E3D00EC30EE /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				99F6B5D12A50C97000EC30EE /* FeedViewController.swift */,
+				99F6B5D32A536E3D00EC30EE /* FeedImageCell.swift */,
 			);
 			path = EssentialFeediOS;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99F6B5D22A50C97000EC30EE /* FeedViewController.swift in Sources */,
+				99F6B5D42A536E3D00EC30EE /* FeedImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
