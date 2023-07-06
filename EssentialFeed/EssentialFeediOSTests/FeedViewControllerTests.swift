@@ -95,7 +95,7 @@ final class FeedViewControllerTests: XCTestCase {
         
         sut.simulateFeedImageViewNotVisible(at: 1)
         XCTAssertEqual(loader.cancelledImageURLs, [image0.url, image1.url], "Expected two cancelled image URL requests once second image is not visible anymore")
-     }
+    }
     
     func test_feedImageViewLoadingIndicator_isVisibleWhileLoadingImages() {
         let (sut, loader) = makeSUT()
@@ -195,7 +195,23 @@ final class FeedViewControllerTests: XCTestCase {
         
         view1?.simulateRetryAction()
         XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url, image0.url, image1.url], "Expected fourth image URL request after second view retry action")
-     }
+    }
+    
+    func test_feedImageView_preloadsImageURLWhenNearVisible() {
+        let image0 = makeImage(url: URL(string: "https://url-0.com")!)
+        let image1 = makeImage(url: URL(string: "https://url-1.com")!)
+        let (sut, loader) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        loader.completeFeedLoading(with: [image0, image1])
+        XCTAssertEqual(loader.loadedImageURLs, [], "Expected no image URL requests until image is near visible")
+        
+        sut.simulateFeedImageNearVisible(at: 0)
+        XCTAssertEqual(loader.loadedImageURLs, [image0.url], "Expected first image URL request once first image is near visible")
+        
+        sut.simulateFeedImageNearVisible(at: 1)
+        XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url], "Expected second image URL request once second image is near visible")
+    }
     
     // MARK: - Helpers
     
@@ -303,6 +319,12 @@ private extension FeedViewController {
         let delegate = tableView.delegate
         let index = IndexPath(row: row, section: feedImagesSection)
         delegate?.tableView?(tableView, didEndDisplaying: view!, forRowAt: index)
+    }
+    
+    func simulateFeedImageNearVisible(at row: Int) {
+        let ds = tableView.prefetchDataSource
+        let index = IndexPath(row: row, section: feedImagesSection)
+        ds?.tableView(tableView, prefetchRowsAt: [index])
     }
     
     var isShowingLoadingIndicator: Bool {
